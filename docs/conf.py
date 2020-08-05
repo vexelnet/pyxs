@@ -117,6 +117,7 @@ def linkcode_resolve(domain, info):
         import inspect
         import os
         import pyxs
+        obj = inspect.unwrap(obj)
         fn = inspect.getsourcefile(obj)
         fn = os.path.relpath(fn, os.path.dirname(pyxs.__file__))
         source, lineno = inspect.getsourcelines(obj)
